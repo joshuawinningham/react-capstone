@@ -1,201 +1,98 @@
-/* App.css */
+/* Importing Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Markazi+Text:wght@500&display=swap");
 
-/* Global styles */
+:root {
+  --font-primary: "Markazi Text", serif;
+  --font-secondary: "Karla", sans-serif;
+  --color-primary-white: #ffffff;
+  --color-primary-dark-green: #495e57;
+  --color-primary-yellow: #f4ce14;
+  --color-primary-orange: #ff6600;
+  --color-secondary-beige: #ee9972;
+  --color-secondary-pink: #fbdabb;
+  --color-highlight-light-grey: #edefee;
+  --color-highlight-dark-grey: #333333;
+  --color-highlight-white: #ffffff;
+  --color-highlight-light-grey-alt: #d9d9d9; /* New highlight color */
+  --spacing-xs: 0.5rem; /* Extra small spacing */
+  --spacing-sm: 0.75rem; /* Small spacing */
+  --spacing-md: 1rem; /* Medium spacing */
+  --spacing-lg: 1.5rem; /* Large spacing */
+  --spacing-xl: 2rem; /* Extra large spacing */
+  --color-text: #000000;
+  --color-hover: var(--color-primary-dark-green);
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-highlight-dark-grey);
+  background-color: var(--color-highlight-light-grey);
 }
 
-/* Logo styles */
-
-.logo img {
-  max-width: 150px; /* Adjust as needed */
-  height: auto;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary);
+  color: var(--color-primary-dark-green);
 }
 
-/* Navigation styles */
-nav {
-  background-color: #ffffff;
-  padding: 1rem 0;
+h1 {
+  font-size: 2.5rem; /* Adjust according to your design */
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+h2 {
+  font-size: 2rem;
 }
 
-nav ul li {
-  margin: 0 1rem;
-  margin-left: 1.5rem;
+h3 {
+  font-size: 1.75rem;
 }
 
-nav ul li:first-child {
-  margin-left: 0;
+p {
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  color: var(--color-highlight-dark-grey);
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  font-size: 1.1rem;
+/* Primary Button */
+.button-primary {
+  background-color: var(--color-primary-yellow);
+  color: var(--color-highlight-dark-grey);
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
 }
 
-nav ul li a:hover {
-  color: #495e57;
-}
-
-/* Header styles */
-header {
-  background-color: #ffffff;
-  color: white;
-  text-align: center;
-  padding: 1rem 0;
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Main content styles */
-main {
-  padding: 2rem;
-}
-
-/* Footer styles */
-footer {
-  background-color: #edefee;
-  color: #333;
-  padding: 2rem 0;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 2rem;
-  padding: 0 2rem;
-}
-
-.footer-section {
-  flex: 1 1 200px;
-  min-width: 200px;
-  margin-bottom: 1rem;
-}
-
-.logo-section {
-  flex: 0 1 auto;
-  margin-right: 2rem;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  margin-top: 2rem;
-}
-
-.footer-logo {
-  max-width: 150px;
-  height: auto;
-}
-
-.footer-section h3 {
-  color: #495e57;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.footer-section ul {
-  list-style-type: none;
-  padding: 0;
-  text-align: left;
-  margin-left: 0.25rem;
-}
-
-.footer-section ul li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-section a {
-  color: #333333;
+/* Links */
+a {
+  color: var(--color-secondary-beige);
   text-decoration: none;
 }
 
-.footer-section a:hover {
-  text-decoration: underline;
+a:hover {
+  color: var(--color-secondary-pink);
 }
 
-.social-links {
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-start;
-  margin-left: 0.25rem;
+/* Additional Utility Classes */
+.text-dark-green {
+  color: var(--color-primary-dark-green);
 }
 
-.footer-section p {
-  margin-left: 0.25rem;
+.bg-dark-green {
+  background-color: var(--color-primary-dark-green);
 }
 
-/* Responsive styles */
-
-@media (max-width: 1024px) {
-  .footer-content {
-    justify-content: flex-start;
-  }
-
-  .footer-section {
-    flex: 1 1 calc(50% - 2rem);
-  }
+.bg-light-grey {
+  background-color: var(--color-highlight-light-grey);
 }
 
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav {
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav ul li {
-    margin: 0.5rem 0;
-    margin-left: 0;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer-section,
-  .logo-section {
-    margin-bottom: 2rem;
-    width: 100%;
-    margin-right: 0;
-  }
-
-  .logo-section {
-    height: auto;
-  }
+.bg-yellow {
+  background-color: var(--color-primary-yellow);
 }

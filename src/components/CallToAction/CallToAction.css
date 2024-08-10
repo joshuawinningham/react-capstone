@@ -1,0 +1,144 @@
+/* Header (formerly .hero) */
+header.hero {
+  background-color: var(--color-primary-dark-green); /* Use global color variable */
+  height: 500px; /* Ensure a minimum height */
+  padding: 20px 0;
+  position: relative;
+  overflow: visible;
+  width: 100%;
+}
+
+/* Container */
+header.hero .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+  height: 100%; /* Ensure content takes up the full height of the hero section */
+}
+
+/* Article (formerly .hero-content) */
+header.hero article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 360px;
+  text-align: left;
+  grid-column: 1 / 2;
+}
+
+header.hero article h1,
+header.hero article h2,
+header.hero article p,
+header.hero article .cta-button {
+  text-align: left;
+  margin-left: 0;
+  align-self: flex-start;
+}
+
+header.hero h1 {
+  font-family: var(--font-primary); /* Use global font family */
+  font-size: 64px;
+  font-weight: 500;
+  margin: 0;
+  color: var(--color-primary-yellow); /* Use global color variable */
+}
+
+header.hero h2 {
+  font-family: var(--font-primary); /* Use global font family */
+  font-size: 40px;
+  margin: 0;
+  color: var(--color-highlight-light-grey); /* Use global color variable */
+}
+
+header.hero p {
+  font-family: var(--font-secondary); /* Use global font family */
+  font-size: 18px;
+  margin: 32px 0;
+  color: var(--color-highlight-light-grey); /* Use global color variable */
+}
+
+/* Navigation */
+header.hero nav {
+  display: contents;
+}
+
+/* CTA Button */
+header.hero .cta-button {
+  background-color: var(--color-primary-yellow); /* Use global color variable */
+  color: var(--color-highlight-dark-grey); /* Use global color variable */
+  padding: 15px 30px;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+header.hero .cta-button:hover {
+  background-color: #e1b812;
+}
+
+/* Figure (formerly .hero-image) */
+header.hero figure {
+  width: 375px;
+  height: 425px;
+  grid-column: 2 / 3;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-top: 0;
+  position: absolute;
+  bottom: -50px;
+  transform: translateX(-20px);
+  z-index: 1;
+}
+
+header.hero figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  header.hero .container {
+    padding: 0 20px;
+  }
+
+  header.hero article {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  header.hero {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  header.hero .container {
+    grid-template-columns: 1fr;
+  }
+
+  header.hero article {
+    position: static;
+    padding: 0 20px;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 100%;
+  }
+
+  header.hero figure {
+    position: static;
+    margin: 20px auto 0;
+    width: 100%;
+    max-width: 375px;
+    height: auto;
+    aspect-ratio: 375 / 425;
+  }
+}

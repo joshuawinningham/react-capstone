@@ -1,0 +1,18 @@
+/* Logo styles */
+.logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .logo {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 640px) {
+}
+
+@media (max-width: 480px) {
+}

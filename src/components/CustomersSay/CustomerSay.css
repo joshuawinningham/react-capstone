@@ -1,0 +1,120 @@
+.testimonials-section {
+  background-color: var(--color-highlight-light-grey-alt); /* Use global color variable */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-family: var(--font-primary); /* Use global font family */
+  margin-bottom: 70px;
+  margin-top: 50px;
+  color: var(--color-primary-dark-green); /* Use global color variable */
+}
+
+.testimonials-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding-bottom: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.testimonial-card {
+  background-color: var(--color-primary-white);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  box-sizing: border-box;
+}
+
+.testimonial-stars {
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 15px;
+  margin-left: 5px;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-secondary-beige); /* Use global color variable */
+  border-radius: 50%;
+}
+
+.testimonial-info {
+  margin-left: 10px;
+  text-align: left;
+}
+
+.testimonial-name {
+  font-family: var(--font-secondary); /* Use global font family */
+  margin: 0;
+  font-weight: bold;
+}
+
+.testimonial-username {
+  font-family: var(--font-secondary); /* Use global font family */
+  margin: 0;
+  color: var(--color-highlight-dark-grey); /* Use global color variable */
+}
+
+.testimonial-content {
+  font-family: var(--font-secondary); /* Use global font family */
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* New styles for semantic elements */
+article.testimonial-card {
+  display: block; /* Ensure article behaves like a div */
+}
+
+blockquote.testimonial-content {
+  margin: 0;
+  padding: 0;
+}
+
+blockquote.testimonial-content p {
+  margin: 0;
+  font-style: italic;
+}
+
+h3.testimonial-name {
+  font-size: inherit; /* Maintain original font size */
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .testimonials-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
