@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./BookingForm.css";
-import { fetchAPI } from "../../api"; // Import fetchAPI from the api file
+import { fetchAPI } from "../../api";
 
 export function initializeTimes() {
   const today = new Date();

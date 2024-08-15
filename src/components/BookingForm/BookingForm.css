@@ -1,15 +1,13 @@
-/* BookingForm.css */
-
 .booking-section {
   position: relative;
-  padding-top: 100px; /* Adjust this value to control how much the form overlaps */
-  margin-top: -175px; /* This creates the overlap effect */
-  z-index: 10; /* Ensure the booking section appears above the content it's overlapping */
-  margin-bottom: 80px; /* Add space below the booking form */
+  padding-top: 100px;
+  margin-top: -175px;
+  z-index: 10;
+  margin-bottom: 80px;
 }
 
 .booking-form-container {
-  max-width: 800px; /* Increased from 500px */
+  max-width: 800px;
   margin: 0 auto;
   background-color: var(--color-highlight-white);
   border-radius: 16px;
@@ -19,8 +17,8 @@
 }
 
 .reservation-form {
-  max-width: 500px; /* Added to maintain form width */
-  margin: 0 auto; /* Center the form within the container */
+  max-width: 500px;
+  margin: 0 auto;
   padding: var(--spacing-xl);
   display: flex;
   flex-direction: column;
@@ -60,7 +58,6 @@
   box-sizing: border-box;
 }
 
-/* Create space for select arrows */
 .form-field select {
   position: relative;
   appearance: none;
@@ -124,15 +121,16 @@ legend {
 }
 
 /* Responsive design */
+
 @media (max-width: 768px) {
   .booking-section {
     padding-top: 80px;
     margin-top: -150px;
-    margin-bottom: 60px; /* Slightly less space on mobile */
+    margin-bottom: 60px;
   }
 
   .booking-form-container {
-    max-width: 95%; /* Adjusted for mobile */
+    max-width: 95%;
   }
 
   .reservation-form {

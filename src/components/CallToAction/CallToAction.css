@@ -1,14 +1,12 @@
-/* Hero Section */
 .hero {
   background-color: var(--color-primary-dark-green);
-  min-height: 406px; /* Change from height to min-height */
-  padding: 40px 0; /* Increase padding */
+  min-height: 406px;
+  padding: 40px 0;
   position: relative;
-  overflow: visible; /* Change from visible to hidden */
+  overflow: visible;
   width: 100%;
 }
 
-/* Container */
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -17,10 +15,9 @@
   gap: 20px;
   align-items: center;
   position: relative;
-  min-height: 326px; /* Set a minimum height */
+  min-height: 326px;
 }
 
-/* Hero Content */
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -47,31 +44,29 @@
   font-weight: 500;
   margin: 0;
   color: var(--color-primary-yellow);
-  line-height: 0.95; /* Reduce line height */
+  line-height: 0.95;
 }
 
 .hero .hero-subtitle {
   font-family: var(--font-primary);
   font-size: 40px;
-  margin: 0 0 10px 0; /* Add some bottom margin */
+  margin: 0 0 10px 0;
   color: var(--color-highlight-light-grey);
-  line-height: 1.1; /* Reduce line height */
+  line-height: 1.1;
 }
 
 .hero .hero-description {
   font-family: var(--font-secondary);
   font-size: 18px;
-  margin: 10px 0; /* Reduce top and bottom margins */
+  margin: 10px 0;
   color: var(--color-highlight-light-grey);
-  line-height: 1.5; /* Adjust line height for readability */
+  line-height: 1.5;
 }
 
-/* CTA Container */
 .cta-container {
   display: contents;
 }
 
-/* CTA Button */
 .hero .cta-button {
   background-color: var(--color-primary-yellow);
   color: var(--color-highlight-dark-grey);
@@ -81,14 +76,13 @@
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.3s;
-  margin-top: 20px; /* Add top margin */
+  margin-top: 20px;
 }
 
 .hero .cta-button:hover {
   background-color: #e1b812;
 }
 
-/* Hero Image */
 .hero-image {
   width: 375px;
   height: 425px;
@@ -109,7 +103,7 @@
   border-radius: 16px;
 }
 
-/* Media Queries */
+/* Responsive design */
 
 @media (max-width: 1200px) {
   .hero-image {

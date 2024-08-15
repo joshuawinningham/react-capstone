@@ -28,7 +28,6 @@ const ConfirmedBooking = () => {
                 Back to Home
               </a>
             </li>
-            {/* You could add more navigation options here */}
           </ul>
         </nav>
       </footer>

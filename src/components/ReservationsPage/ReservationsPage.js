@@ -2,14 +2,13 @@ import React, { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import BookingForm, { initializeTimes } from "../BookingForm/BookingForm";
 import HeroImage from "../HeroImage/HeroImage";
-import { fetchAPI, submitAPI } from "../../api"; // Import both API functions
+import { fetchAPI, submitAPI } from "../../api";
 
 const ReservationsPage = () => {
   const [availableTimes, setAvailableTimes] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Initialize times when the component mounts
     setAvailableTimes(initializeTimes());
   }, []);
 
@@ -21,11 +20,10 @@ const ReservationsPage = () => {
 
   const submitForm = useCallback(
     (formData) => {
-      // Here you would typically send the data to an API
       const success = submitAPI(formData);
       if (success) {
         console.log("Form submitted:", formData);
-        navigate("/booking-confirmation"); // Navigate to the confirmation page
+        navigate("/booking-confirmation");
       } else {
         alert("Booking submission failed. Please try again.");
       }

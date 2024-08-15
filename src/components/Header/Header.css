@@ -1,6 +1,5 @@
-/* Header styles */
 .header {
-  background-color: var(--color-primary-white); /* Use global color variable */
+  background-color: var(--color-primary-white);
   padding: 1rem 0;
 }
 
@@ -13,7 +12,8 @@
   padding: 0 2rem;
 }
 
-/* Responsive styles */
+/* Responsive design */
+
 @media (max-width: 768px) {
   .header {
     padding: 0.5rem 0;
@@ -24,12 +24,4 @@
     justify-items: start;
     gap: 1rem;
   }
-}
-
-@media (max-width: 640px) {
-  /* Add any additional styles needed for this breakpoint */
-}
-
-@media (max-width: 480px) {
-  /* Add any additional styles needed for this breakpoint */
 }

@@ -14,23 +14,23 @@
 }
 
 .title {
-  font-family: var(--font-primary); /* Use global font family */
+  font-family: var(--font-primary);
   font-size: 2em;
   font-weight: bold;
-  color: var(--color-primary-dark-green); /* Use global color variable */
+  color: var(--color-primary-dark-green);
 }
 
 .subtitle {
-  font-family: var(--font-secondary); /* Use global font family */
+  font-family: var(--font-secondary);
   font-size: 1.5em;
-  color: var(--color-highlight-dark-grey); /* Use global color variable */
+  color: var(--color-highlight-dark-grey);
 }
 
 .paragraph {
-  font-family: var(--font-secondary); /* Use global font family */
+  font-family: var(--font-secondary);
   font-size: 1em;
   line-height: 1.5em;
-  color: var(--color-highlight-dark-grey); /* Use global color variable */
+  color: var(--color-highlight-dark-grey);
 }
 
 .imageContainer {
@@ -51,7 +51,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px; /* Consistent with other image styles */
+  border-radius: 16px;
 }
 
 .image1 {
@@ -67,6 +67,8 @@
   top: 0;
   left: 180px;
 }
+
+/* Responsive design */
 
 @media (max-width: 768px) {
   .container {

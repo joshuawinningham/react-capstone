@@ -1,7 +1,6 @@
-/* Footer styles */
 .footer {
-  background-color: var(--color-highlight-light-grey-alt); /* Use global color variable */
-  color: var(--color-highlight-dark-grey); /* Use global color variable */
+  background-color: var(--color-highlight-light-grey-alt);
+  color: var(--color-highlight-dark-grey);
   padding: 2rem 0;
 }
 
@@ -35,11 +34,11 @@
 }
 
 .footer-column h3 {
-  color: var(--color-primary-dark-green); /* Use global color variable */
+  color: var(--color-primary-dark-green);
   margin-bottom: 0.75rem;
   font-size: 18px;
   font-weight: bold;
-  font-family: var(--font-primary); /* Use global font family */
+  font-family: var(--font-primary);
 }
 
 .footer-column ul,
@@ -61,10 +60,10 @@
   padding: 0;
   font-size: 14px;
   line-height: 1.5;
-  color: var(--color-highlight-dark-grey); /* Use global color variable */
+  color: var(--color-highlight-dark-grey);
   font-weight: normal;
   text-decoration: none;
-  font-family: var(--font-secondary); /* Use global font family */
+  font-family: var(--font-secondary);
 }
 
 .footer-column ul li a {
@@ -72,10 +71,11 @@
 }
 
 .footer-column ul li a:hover {
-  color: var(--color-primary-yellow); /* Use global color variable */
+  color: var(--color-primary-yellow);
 }
 
 /* Responsive design */
+
 @media (max-width: 1024px) {
   .footer-content {
     flex-wrap: wrap;

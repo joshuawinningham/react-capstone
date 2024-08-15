@@ -1,4 +1,3 @@
-/* Importing Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Markazi+Text:wght@500&display=swap");
 
 :root {
@@ -13,12 +12,12 @@
   --color-highlight-light-grey: #edefee;
   --color-highlight-dark-grey: #333333;
   --color-highlight-white: #ffffff;
-  --color-highlight-light-grey-alt: #d9d9d9; /* New highlight color */
-  --spacing-xs: 0.5rem; /* Extra small spacing */
-  --spacing-sm: 0.75rem; /* Small spacing */
-  --spacing-md: 1rem; /* Medium spacing */
-  --spacing-lg: 1.5rem; /* Large spacing */
-  --spacing-xl: 2rem; /* Extra large spacing */
+  --color-highlight-light-grey-alt: #d9d9d9;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
   --color-text: #000000;
   --color-hover: var(--color-primary-dark-green);
 }
@@ -42,7 +41,7 @@ h6 {
 }
 
 h1 {
-  font-size: 2.5rem; /* Adjust according to your design */
+  font-size: 2.5rem;
 }
 
 h2 {
@@ -59,7 +58,6 @@ p {
   color: var(--color-highlight-dark-grey);
 }
 
-/* Primary Button */
 .button-primary {
   background-color: var(--color-primary-yellow);
   color: var(--color-highlight-dark-grey);
@@ -70,7 +68,6 @@ p {
   cursor: pointer;
 }
 
-/* Links */
 a {
   color: var(--color-secondary-beige);
   text-decoration: none;
@@ -80,7 +77,6 @@ a:hover {
   color: var(--color-secondary-pink);
 }
 
-/* Additional Utility Classes */
 .text-dark-green {
   color: var(--color-primary-dark-green);
 }

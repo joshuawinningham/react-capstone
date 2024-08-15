@@ -1,24 +1,21 @@
-/* Styling for the main section containing specials */
 section.specials-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--spacing-xl) var(--spacing-md); /* Using global spacing variables */
+  padding: var(--spacing-xl) var(--spacing-md);
   text-align: center;
 }
 
-/* Styling for the header section within the specials */
 div.specials-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--spacing-md); /* Using global spacing variable */
+  margin-bottom: var(--spacing-md);
 }
 
-/* Styling for the online menu button */
 button.online-menu-button {
-  background-color: var(--color-primary-yellow); /* Using global color variable */
-  color: var(--color-highlight-dark-grey); /* Using global color variable */
-  padding: var(--spacing-sm) var(--spacing-md); /* Using global spacing variables */
+  background-color: var(--color-primary-yellow);
+  color: var(--color-highlight-dark-grey);
+  padding: var(--spacing-sm) var(--spacing-md);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -29,71 +26,63 @@ button.online-menu-button:hover {
   background-color: #e2ba13;
 }
 
-/* Styling for the grid layout of specials */
 div.specials-grid {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-/* Styling for each individual special item (article) */
 article.special-item {
-  border: 1px solid var(--color-highlight-light-grey); /* Using global color variable */
+  border: 1px solid var(--color-highlight-light-grey);
   border-radius: 8px;
-  padding: 0 0 var(--spacing-md) 0; /* Using global spacing variable */
-  margin: var(--spacing-sm); /* Using global spacing variable */
+  padding: 0 0 var(--spacing-md) 0;
+  margin: var(--spacing-sm);
   max-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* Styling for the container holding the special item image */
 div.special-img-container {
   width: 100%;
-  height: 200px; /* Set a fixed height */
+  height: 200px;
   overflow: hidden;
   border-radius: 8px 8px 0 0;
 }
 
-/* Styling for the special item image */
 img.special-img {
   width: 100%;
   height: 100%;
 }
 
-/* Styling for the special item description */
 p.special-description {
-  padding-left: var(--spacing-md); /* Using global spacing variable */
+  padding-left: var(--spacing-md);
   text-align: left;
-  margin-top: var(--spacing-xs); /* Reduced margin to decrease spacing, assume --spacing-xs exists */
+  margin-top: var(--spacing-xs);
   flex-grow: 1;
 }
 
-/* Styling for the title and price of the special item */
 div.special-title-price {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: var(--spacing-md); /* Using global spacing variable */
-  padding-right: var(--spacing-md); /* Using global spacing variable */
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
 }
 
-/* Styling for the price text */
 p.price {
   font-weight: bold;
-  color: var(--color-primary-orange); /* Assuming a global orange color variable exists */
+  color: var(--color-primary-orange);
 }
 
-/* Styling for the order link */
 a.order-link {
   display: inline-flex;
   align-items: center;
-  color: var(--color-highlight-dark-grey); /* Using global color variable */
+  color: var(--color-highlight-dark-grey);
   text-decoration: none;
   font-weight: bold;
-  margin-bottom: var(--spacing-sm); /* Using global spacing variable */
-  padding-left: var(--spacing-md); /* Using global spacing variable */
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-md);
 }
 
 a.order-link:hover {
@@ -101,7 +90,6 @@ a.order-link:hover {
   color: var(--color-primary-orange);
 }
 
-/* Additional styling for the icon within the order link */
 a.order-link svg {
-  margin-left: var(--spacing-xs); /* Using global spacing variable */
+  margin-left: var(--spacing-xs);
 }

@@ -24,7 +24,8 @@ nav ul {
   color: var(--color-hover);
 }
 
-/* Responsive styles */
+/* Responsive design */
+
 @media (max-width: 768px) {
   nav {
     justify-self: start;

@@ -1,14 +1,14 @@
 .testimonials-section {
-  background-color: var(--color-highlight-light-grey-alt); /* Use global color variable */
+  background-color: var(--color-highlight-light-grey-alt);
   padding: 60px 20px;
   text-align: center;
 }
 
 .testimonials-section h2 {
-  font-family: var(--font-primary); /* Use global font family */
+  font-family: var(--font-primary);
   margin-bottom: 70px;
   margin-top: 50px;
-  color: var(--color-primary-dark-green); /* Use global color variable */
+  color: var(--color-primary-dark-green);
 }
 
 .testimonials-container {
@@ -48,7 +48,7 @@
 .avatar-placeholder {
   width: 40px;
   height: 40px;
-  background-color: var(--color-secondary-beige); /* Use global color variable */
+  background-color: var(--color-secondary-beige);
   border-radius: 50%;
 }
 
@@ -58,26 +58,25 @@
 }
 
 .testimonial-name {
-  font-family: var(--font-secondary); /* Use global font family */
+  font-family: var(--font-secondary);
   margin: 0;
   font-weight: bold;
 }
 
 .testimonial-username {
-  font-family: var(--font-secondary); /* Use global font family */
+  font-family: var(--font-secondary);
   margin: 0;
-  color: var(--color-highlight-dark-grey); /* Use global color variable */
+  color: var(--color-highlight-dark-grey);
 }
 
 .testimonial-content {
-  font-family: var(--font-secondary); /* Use global font family */
+  font-family: var(--font-secondary);
   font-style: italic;
   margin-top: 10px;
 }
 
-/* New styles for semantic elements */
 article.testimonial-card {
-  display: block; /* Ensure article behaves like a div */
+  display: block;
 }
 
 blockquote.testimonial-content {
@@ -91,12 +90,13 @@ blockquote.testimonial-content p {
 }
 
 h3.testimonial-name {
-  font-size: inherit; /* Maintain original font size */
+  font-size: inherit;
   margin: 0;
   font-weight: bold;
 }
 
-/* Responsive Design */
+/* Responsive design */
+
 @media (max-width: 992px) {
   .testimonials-container {
     padding-left: 10px;

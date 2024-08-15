@@ -1,7 +1,5 @@
 import React from "react";
 import "./Specials.css";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faMotorcycle } from "@fortawesome/free-solid-svg-icons";
 import ElectricMopedIcon from "@mui/icons-material/ElectricMoped";
 import greekSaladImg from "../../assets/images/greek_salad_512.jpg";
 import bruschettaImg from "../../assets/images/bruchetta_512.jpg";
