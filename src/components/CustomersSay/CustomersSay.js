@@ -34,7 +34,9 @@ const CustomersSay = () => {
   };
 
   return (
-    <section className="testimonials-section">
+    <section
+      className="testimonials-section"
+      aria-labelledby="testimonials-title">
       <h2>Testimonials</h2>
       <div className="testimonials-container">
         {testimonials.map((testimonial, index) => (

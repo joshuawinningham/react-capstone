@@ -33,13 +33,15 @@ const specials = [
 
 const Specials = () => {
   return (
-    <section className="specials-container">
-      <header className="specials-header">
+    <section
+      className="specials-container"
+      aria-labelledby="specials-heading">
+      <div className="specials-header">
         <h2>This week&apos;s specials!</h2>
         <a href="/menu">
           <button className="online-menu-button">Online Menu</button>
         </a>
-      </header>
+      </div>
       <div className="specials-grid">
         {specials.map((item, index) => (
           <article
@@ -60,7 +62,7 @@ const Specials = () => {
             <a
               href="/order"
               className="order-link">
-              <strong>Order a delivery</strong> <ElectricMopedIcon />
+              <strong>Order a delivery</strong> <ElectricMopedIcon aria-hidden="true" />
             </a>
           </article>
         ))}

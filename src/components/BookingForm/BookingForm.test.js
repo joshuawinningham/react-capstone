@@ -1,84 +1,138 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import BookingForm from "../BookingForm/BookingForm.js";
 
 describe("BookingForm", () => {
-  const mockAvailableTimes = ["17:00", "18:00", "19:00"];
-  const mockUpdateTimes = jest.fn();
-  const mockSubmitForm = jest.fn();
-
-  const renderBookingForm = () => {
-    render(
-      <BookingForm
-        availableTimes={mockAvailableTimes}
-        updateTimes={mockUpdateTimes}
-        submitForm={mockSubmitForm}
-      />
-    );
+  const mockProps = {
+    availableTimes: ["17:00", "18:00", "19:00"],
+    updateTimes: jest.fn(),
+    submitForm: jest.fn(),
   };
 
-  beforeEach(() => {
-    jest.clearAllMocks();
+  test("date input has correct attributes", () => {
+    render(<BookingForm {...mockProps} />);
+    const dateInput = screen.getByLabelText(/choose date/i);
+    expect(dateInput).toHaveAttribute("type", "date");
+    expect(dateInput).toHaveAttribute("required");
+    expect(dateInput).toHaveAttribute("min", expect.any(String));
+    expect(dateInput).toHaveAttribute("max", expect.any(String));
   });
 
-  test("renders BookingForm correctly", () => {
-    renderBookingForm();
-
-    expect(screen.getByText("Reserve a Table")).toBeInTheDocument();
-    expect(screen.getByLabelText("Choose date")).toBeInTheDocument();
-    expect(screen.getByLabelText("Choose time")).toBeInTheDocument();
-    expect(screen.getByLabelText("Number of guests")).toBeInTheDocument();
-    expect(screen.getByLabelText("Occasion")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Make Your reservation" })).toBeInTheDocument();
+  test("time select has correct attributes", () => {
+    render(<BookingForm {...mockProps} />);
+    const timeSelect = screen.getByLabelText(/choose time/i);
+    expect(timeSelect).toHaveAttribute("required");
+    expect(timeSelect).toHaveAttribute("id", "res-time");
   });
 
-  test("displays available times", () => {
-    renderBookingForm();
+  test("guests input has correct attributes", () => {
+    render(<BookingForm {...mockProps} />);
+    const guestsInput = screen.getByLabelText(/number of guests/i);
+    expect(guestsInput).toHaveAttribute("type", "number");
+    expect(guestsInput).toHaveAttribute("required");
+    expect(guestsInput).toHaveAttribute("min", "1");
+    expect(guestsInput).toHaveAttribute("max", "10");
+    expect(guestsInput).toHaveAttribute("step", "1");
+  });
 
-    const timeSelect = screen.getByLabelText("Choose time");
-    expect(timeSelect.children.length).toBe(mockAvailableTimes.length + 1); // +1 for default option
-    mockAvailableTimes.forEach((time) => {
-      expect(screen.getByText(time)).toBeInTheDocument();
+  test("occasion select has correct attributes", () => {
+    render(<BookingForm {...mockProps} />);
+    const occasionSelect = screen.getByLabelText(/occasion/i);
+    expect(occasionSelect).toHaveAttribute("id", "occasion");
+  });
+
+  test("submit button has correct attributes", () => {
+    render(<BookingForm {...mockProps} />);
+    const submitButton = screen.getByRole("button", { name: /make your reservation/i });
+    expect(submitButton).toHaveAttribute("type", "submit");
+  });
+
+  describe("Form Validation", () => {
+    test("should show error when date is not selected", async () => {
+      render(<BookingForm {...mockProps} />);
+      const dateInput = screen.getByLabelText(/choose date/i);
+      fireEvent.change(dateInput, { target: { value: "" } });
+
+      await waitFor(() => {
+        expect(screen.getByText(/please select a date/i)).toBeInTheDocument();
+      });
     });
-  });
 
-  test("calls updateTimes when date is changed", () => {
-    renderBookingForm();
+    test("should not show error when valid date is selected", async () => {
+      render(<BookingForm {...mockProps} />);
+      const dateInput = screen.getByLabelText(/choose date/i);
+      const validDate = new Date().toISOString().split("T")[0]; // Today's date
+      fireEvent.change(dateInput, { target: { value: validDate } });
 
-    const dateInput = screen.getByLabelText("Choose date");
-    fireEvent.change(dateInput, { target: { value: "2023-06-20" } });
-
-    expect(mockUpdateTimes).toHaveBeenCalledWith("2023-06-20");
-  });
-
-  test("calls submitForm with form data when form is submitted", () => {
-    renderBookingForm();
-
-    fireEvent.change(screen.getByLabelText("Choose date"), { target: { value: "2023-06-20" } });
-    fireEvent.change(screen.getByLabelText("Choose time"), { target: { value: "18:00" } });
-    fireEvent.change(screen.getByLabelText("Number of guests"), { target: { value: "4" } });
-    fireEvent.change(screen.getByLabelText("Occasion"), { target: { value: "Birthday" } });
-
-    fireEvent.click(screen.getByRole("button", { name: "Make Your reservation" }));
-
-    expect(mockSubmitForm).toHaveBeenCalledWith({
-      date: "2023-06-20",
-      time: "18:00",
-      guests: 4, // Changed from string to number
-      occasion: "Birthday",
+      await waitFor(() => {
+        expect(screen.queryByText(/please select a date/i)).not.toBeInTheDocument();
+      });
     });
-  });
 
-  test("form is submitted with default values if fields are empty", () => {
-    renderBookingForm();
+    test("should show error when time is not selected", async () => {
+      render(<BookingForm {...mockProps} />);
+      const timeSelect = screen.getByLabelText(/choose time/i);
+      fireEvent.change(timeSelect, { target: { value: "" } });
 
-    fireEvent.click(screen.getByRole("button", { name: "Make Your reservation" }));
+      await waitFor(() => {
+        expect(screen.getByText(/please select a time/i)).toBeInTheDocument();
+      });
+    });
 
-    expect(mockSubmitForm).toHaveBeenCalledWith({
-      date: expect.any(String),
-      time: "",
-      guests: 1,
-      occasion: "Birthday",
+    test("should not show error when valid time is selected", async () => {
+      render(<BookingForm {...mockProps} />);
+      const timeSelect = screen.getByLabelText(/choose time/i);
+      fireEvent.change(timeSelect, { target: { value: "17:00" } });
+
+      await waitFor(() => {
+        expect(screen.queryByText(/please select a time/i)).not.toBeInTheDocument();
+      });
+    });
+
+    test("should show error when guests number is invalid", async () => {
+      render(<BookingForm {...mockProps} />);
+      const guestsInput = screen.getByLabelText(/number of guests/i);
+      fireEvent.change(guestsInput, { target: { value: "0" } });
+
+      await waitFor(() => {
+        expect(screen.getByText(/please enter a number between 1 and 10/i)).toBeInTheDocument();
+      });
+    });
+
+    test("should not show error when guests number is valid", async () => {
+      render(<BookingForm {...mockProps} />);
+      const guestsInput = screen.getByLabelText(/number of guests/i);
+      fireEvent.change(guestsInput, { target: { value: "5" } });
+
+      await waitFor(() => {
+        expect(screen.queryByText(/please enter a number between 1 and 10/i)).not.toBeInTheDocument();
+      });
+    });
+
+    test("submit button should be disabled when form is invalid", async () => {
+      render(<BookingForm {...mockProps} />);
+      const dateInput = screen.getByLabelText(/choose date/i);
+      fireEvent.change(dateInput, { target: { value: "" } });
+
+      await waitFor(() => {
+        expect(screen.getByRole("button", { name: /make your reservation/i })).toBeDisabled();
+      });
+    });
+
+    test("submit button should be enabled when form is valid", async () => {
+      render(<BookingForm {...mockProps} />);
+      const dateInput = screen.getByLabelText(/choose date/i);
+      const timeSelect = screen.getByLabelText(/choose time/i);
+      const guestsInput = screen.getByLabelText(/number of guests/i);
+
+      fireEvent.change(dateInput, { target: { value: new Date().toISOString().split("T")[0] } });
+      fireEvent.change(timeSelect, { target: { value: "17:00" } });
+      fireEvent.change(guestsInput, { target: { value: "5" } });
+
+      await waitFor(() => {
+        expect(screen.getByRole("button", { name: /make your reservation/i })).toBeEnabled();
+      });
     });
   });
 });

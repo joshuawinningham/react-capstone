@@ -1,15 +1,15 @@
-/* Header (formerly .hero) */
-header.hero {
-  background-color: var(--color-primary-dark-green); /* Use global color variable */
-  height: 500px; /* Ensure a minimum height */
-  padding: 20px 0;
+/* Hero Section */
+.hero {
+  background-color: var(--color-primary-dark-green);
+  min-height: 406px; /* Change from height to min-height */
+  padding: 40px 0; /* Increase padding */
   position: relative;
-  overflow: visible;
+  overflow: visible; /* Change from visible to hidden */
   width: 100%;
 }
 
 /* Container */
-header.hero .container {
+.hero-container {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
@@ -17,11 +17,11 @@ header.hero .container {
   gap: 20px;
   align-items: center;
   position: relative;
-  height: 100%; /* Ensure content takes up the full height of the hero section */
+  min-height: 326px; /* Set a minimum height */
 }
 
-/* Article (formerly .hero-content) */
-header.hero article {
+/* Hero Content */
+.hero-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,62 +29,67 @@ header.hero article {
   max-width: 360px;
   text-align: left;
   grid-column: 1 / 2;
+  padding: 20px;
 }
 
-header.hero article h1,
-header.hero article h2,
-header.hero article p,
-header.hero article .cta-button {
+.hero-content h1,
+.hero-content .hero-subtitle,
+.hero-content .hero-description,
+.hero-content .cta-button {
   text-align: left;
   margin-left: 0;
   align-self: flex-start;
 }
 
-header.hero h1 {
-  font-family: var(--font-primary); /* Use global font family */
+.hero h1 {
+  font-family: var(--font-primary);
   font-size: 64px;
   font-weight: 500;
   margin: 0;
-  color: var(--color-primary-yellow); /* Use global color variable */
+  color: var(--color-primary-yellow);
+  line-height: 0.95; /* Reduce line height */
 }
 
-header.hero h2 {
-  font-family: var(--font-primary); /* Use global font family */
+.hero .hero-subtitle {
+  font-family: var(--font-primary);
   font-size: 40px;
-  margin: 0;
-  color: var(--color-highlight-light-grey); /* Use global color variable */
+  margin: 0 0 10px 0; /* Add some bottom margin */
+  color: var(--color-highlight-light-grey);
+  line-height: 1.1; /* Reduce line height */
 }
 
-header.hero p {
-  font-family: var(--font-secondary); /* Use global font family */
+.hero .hero-description {
+  font-family: var(--font-secondary);
   font-size: 18px;
-  margin: 32px 0;
-  color: var(--color-highlight-light-grey); /* Use global color variable */
+  margin: 10px 0; /* Reduce top and bottom margins */
+  color: var(--color-highlight-light-grey);
+  line-height: 1.5; /* Adjust line height for readability */
 }
 
-/* Navigation */
-header.hero nav {
+/* CTA Container */
+.cta-container {
   display: contents;
 }
 
 /* CTA Button */
-header.hero .cta-button {
-  background-color: var(--color-primary-yellow); /* Use global color variable */
-  color: var(--color-highlight-dark-grey); /* Use global color variable */
+.hero .cta-button {
+  background-color: var(--color-primary-yellow);
+  color: var(--color-highlight-dark-grey);
   padding: 15px 30px;
   border-radius: 16px;
   font-size: 18px;
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.3s;
+  margin-top: 20px; /* Add top margin */
 }
 
-header.hero .cta-button:hover {
+.hero .cta-button:hover {
   background-color: #e1b812;
 }
 
-/* Figure (formerly .hero-image) */
-header.hero figure {
+/* Hero Image */
+.hero-image {
   width: 375px;
   height: 425px;
   grid-column: 2 / 3;
@@ -92,12 +97,12 @@ header.hero figure {
   border-radius: 16px;
   margin-top: 0;
   position: absolute;
-  bottom: -50px;
-  transform: translateX(-20px);
+  bottom: -150px;
+  transform: translateX(-60px);
   z-index: 1;
 }
 
-header.hero figure img {
+.hero-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -105,40 +110,66 @@ header.hero figure img {
 }
 
 /* Media Queries */
-@media (max-width: 1200px) {
-  header.hero .container {
-    padding: 0 20px;
-  }
 
-  header.hero article {
-    padding-left: 20px;
+@media (max-width: 1200px) {
+  .hero-image {
+    bottom: -100px;
   }
 }
 
 @media (max-width: 768px) {
-  header.hero {
+  .hero {
     height: auto;
-    padding: 20px 0;
+    padding: 40px 0;
   }
 
-  header.hero .container {
+  .hero-container {
     grid-template-columns: 1fr;
+    gap: 30px;
+    min-height: auto;
   }
 
-  header.hero article {
-    position: static;
-    padding: 0 20px;
-    align-items: flex-start;
-    text-align: left;
+  .hero-content {
     max-width: 100%;
+    padding: 0 20px;
   }
 
-  header.hero figure {
-    position: static;
-    margin: 20px auto 0;
+  .hero-image {
+    position: relative;
     width: 100%;
     max-width: 375px;
     height: auto;
     aspect-ratio: 375 / 425;
+    margin: 20px auto 0;
+    right: auto;
+    bottom: 0px;
+    transform: translateX(-20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 30px 0;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero .hero-subtitle {
+    font-size: 24px;
+  }
+
+  .hero .hero-description {
+    font-size: 14px;
+  }
+
+  .hero .cta-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .hero-image {
+    bottom: -50px;
   }
 }

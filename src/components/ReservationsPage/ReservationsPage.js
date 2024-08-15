@@ -34,14 +34,14 @@ const ReservationsPage = () => {
   );
 
   return (
-    <div className="reservations-page">
+    <main className="reservations-page">
       <HeroImage />
       <BookingForm
         availableTimes={availableTimes}
         updateTimes={updateTimes}
         submitForm={submitForm}
       />
-    </div>
+    </main>
   );
 };
 

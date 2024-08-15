@@ -22,6 +22,9 @@
   max-width: 500px; /* Added to maintain form width */
   margin: 0 auto; /* Center the form within the container */
   padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
 .reservation-form h2 {
@@ -93,6 +96,31 @@
 
 .submit-button:hover {
   background-color: var(--color-secondary-beige);
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+.submit-button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: contents;
+}
+
+legend {
+  padding: 0;
+  margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 /* Responsive design */

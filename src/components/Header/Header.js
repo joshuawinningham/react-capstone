@@ -5,10 +5,15 @@ import "./Header.css";
 
 function Header() {
   return (
-    <header className="header">
+    <header
+      className="header"
+      aria-label="Main header">
       <div className="header-content">
         <Logo />
-        <Nav />
+        <Nav
+          aria-label="Main navigation"
+          role="navigation"
+        />
       </div>
     </header>
   );

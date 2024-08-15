@@ -1,6 +1,6 @@
-header.hero-section {
+.hero-image-section {
   position: relative;
-  height: 594px;
+  height: 514px;
   width: 100vw;
   left: 50%;
   right: 50%;
@@ -11,7 +11,7 @@ header.hero-section {
   background-size: cover;
 }
 
-.hero-overlay {
+.hero-image-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -20,38 +20,59 @@ header.hero-section {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.hero-content {
-  position: relative;
-  height: 100%;
+.hero-image-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--color-primary-white); /* Use global color variable */
+  color: var(--color-primary-white);
   padding: 2rem;
   z-index: 1;
+  text-align: center; /* Add this line */
 }
 
-.hero-text {
+.hero-image-text {
   text-align: center;
   margin-bottom: 60px;
+  width: 100%; /* Add this line */
+  max-width: 800px; /* Add this line, adjust the value as needed */
 }
 
-.hero-title {
-  font-family: var(--font-primary); /* Use global font family */
+.hero-image-title {
+  font-family: var(--font-primary);
   font-size: 2.25rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: var(--color-primary-white); /* Use global color variable */
-  border-bottom: 2px solid var(--color-primary-yellow); /* Use global color variable */
+  color: var(--color-primary-white);
+  border-bottom: 2px solid var(--color-primary-yellow);
   padding-bottom: 0.5rem;
   text-align: center;
 }
 
-.hero-subtitle {
-  font-family: var(--font-secondary); /* Use global font family */
+.hero-image-subtitle {
+  font-family: var(--font-secondary);
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
-  color: var(--color-primary-white); /* Use global color variable */
+  color: var(--color-primary-white);
   text-align: center;
+}
+
+/* Add responsive styles if needed */
+@media (max-width: 768px) {
+  .hero-image-section {
+    height: 400px; /* Adjust as needed for smaller screens */
+  }
+
+  .hero-image-title {
+    font-size: 2rem;
+  }
+
+  .hero-image-subtitle {
+    font-size: 1.1rem;
+  }
 }

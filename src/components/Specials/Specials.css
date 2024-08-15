@@ -7,7 +7,7 @@ section.specials-container {
 }
 
 /* Styling for the header section within the specials */
-header.specials-header {
+div.specials-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -98,6 +98,7 @@ a.order-link {
 
 a.order-link:hover {
   text-decoration: underline;
+  color: var(--color-primary-orange);
 }
 
 /* Additional styling for the icon within the order link */

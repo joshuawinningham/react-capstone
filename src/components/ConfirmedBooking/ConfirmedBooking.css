@@ -1,0 +1,47 @@
+.confirmed-booking {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 0 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.confirmed-booking__header {
+  margin-bottom: 20px;
+}
+
+.confirmed-booking__title {
+  font-size: 2.5rem;
+  color: #495e57;
+}
+
+.confirmed-booking__main {
+  margin-bottom: 20px;
+}
+
+.confirmed-booking__text {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.confirmed-booking__footer {
+  margin-top: 20px;
+}
+
+.confirmed-booking__nav {
+  margin-top: 10px;
+}
+
+.confirmed-booking__nav-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.confirmed-booking__nav-link {
+  color: #f4ce14;
+  text-decoration: none;
+  font-size: 1.1rem;
+}

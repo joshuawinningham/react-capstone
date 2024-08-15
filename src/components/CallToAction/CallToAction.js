@@ -5,28 +5,34 @@ import "./CallToAction.css";
 
 const CallToAction = () => {
   return (
-    <header className="hero">
-      <div className="container">
-        <article className="hero-content">
-          <h1>Little Lemon</h1>
-          <h2>Chicago</h2>
-          <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-          <nav>
+    <section
+      className="hero"
+      aria-labelledby="hero-title">
+      <div className="hero-container">
+        <div className="hero-content">
+          <h1 id="hero-title">Little Lemon</h1>
+          <p className="hero-subtitle">Chicago</p>
+          <p className="hero-description">We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
+          <div className="cta-container">
             <Link
               to="/reservations"
-              className="cta-button">
+              className="cta-button"
+              role="button"
+              aria-label="Reserve a table at Little Lemon">
               Reserve a Table
             </Link>
-          </nav>
-        </article>
-        <figure className="hero-image">
+          </div>
+        </div>
+        <figure
+          className="hero-image"
+          aria-label="Showcase of Little Lemon's dishes">
           <img
             src={HeroImage}
-            alt="Little Lemon Restaurant Food"
+            alt="Assortment of Little Lemon Restaurant's signature dishes"
           />
         </figure>
       </div>
-    </header>
+    </section>
   );
 };
 
