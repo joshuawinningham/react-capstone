@@ -3,6 +3,7 @@ import "./Specials.css";
 import ElectricMopedIcon from "@mui/icons-material/ElectricMoped";
 import greekSaladImg from "../../assets/images/greek_salad_512.jpg";
 import bruschettaImg from "../../assets/images/bruchetta_512.jpg";
+import lemonDessertImg from "../../assets/images/lemon_dessert.jpg";
 
 const specials = [
   {
@@ -23,7 +24,7 @@ const specials = [
     title: "Lemon Dessert",
     price: "$5.00",
     description: "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
-    imgSrc: "https://placehold.co/512x512/4a4a4a/ffffff?text=Lemon+Dessert",
+    imgSrc: lemonDessertImg,
     alt: "Lemon Dessert",
   },
 ];
