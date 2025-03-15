@@ -6,7 +6,7 @@ import image2 from "../../assets/images/Mario_and_Adrian_a.jpg";
 const Chicago = () => {
   return (
     <section
-      className="container"
+      className="chicago-container"
       aria-labelledby="chicagoTitle">
       <div className="textContainer">
         <h2

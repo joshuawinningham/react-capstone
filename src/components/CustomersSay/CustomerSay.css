@@ -6,9 +6,12 @@
 
 .testimonials-section h2 {
   font-family: var(--font-primary);
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--color-primary-dark-green);
+  line-height: 0.95;
   margin-bottom: 70px;
   margin-top: 50px;
-  color: var(--color-primary-dark-green);
 }
 
 .testimonials-container {
@@ -116,5 +119,15 @@ h3.testimonial-name {
   .testimonial-card {
     width: 100%;
     max-width: 400px;
+  }
+
+  .testimonials-section h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-section h2 {
+    font-size: 28px;
   }
 }

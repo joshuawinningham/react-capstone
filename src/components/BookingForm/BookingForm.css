@@ -26,9 +26,6 @@
 }
 
 .reservation-form h2 {
-  font-family: var(--font-primary);
-  font-size: 2rem;
-  color: var(--color-primary-dark-green);
   margin-bottom: var(--spacing-lg);
   text-align: center;
 }
@@ -138,7 +135,7 @@ legend {
   }
 
   .reservation-form h2 {
-    font-size: 1.75rem;
+    margin-bottom: var(--spacing-md);
   }
 
   .submit-button {

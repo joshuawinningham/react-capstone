@@ -103,21 +103,27 @@ const Footer = () => {
           <ul aria-labelledby="social-heading">
             <li>
               <a
-                href="#"
+                href="https://facebook.com/littlelemon"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Visit our Facebook page">
                 Facebook
               </a>
             </li>
             <li>
               <a
-                href="#"
+                href="https://instagram.com/littlelemon"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Visit our Instagram profile">
                 Instagram
               </a>
             </li>
             <li>
               <a
-                href="#"
+                href="https://twitter.com/littlelemon"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Visit our Twitter profile">
                 Twitter
               </a>
