@@ -1,9 +1,25 @@
 import React from "react";
 import "./Specials.css";
 import ElectricMopedIcon from "@mui/icons-material/ElectricMoped";
+import greekSaladImg from "../../assets/images/greek_salad_5760.jpg";
+import bruschettaImg from "../../assets/images/bruchetta.svg";
 import lemonDessertImg from "../../assets/images/lemon_dessert.jpg";
 
 const specials = [
+  {
+    title: "Greek salad",
+    price: "$12.99",
+    description: "The famous Greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
+    imgSrc: greekSaladImg,
+    alt: "Greek salad",
+  },
+  {
+    title: "Bruschetta",
+    price: "$5.99",
+    description: "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.",
+    imgSrc: bruschettaImg,
+    alt: "Bruschetta",
+  },
   {
     title: "Lemon Dessert",
     price: "$5.00",
